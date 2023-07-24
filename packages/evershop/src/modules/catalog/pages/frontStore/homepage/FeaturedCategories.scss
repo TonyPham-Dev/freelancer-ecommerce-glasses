@@ -34,3 +34,36 @@
   font-size: 14px;
   color: #555;
 }
+.product-wrapper {
+  display: grid; /* Use grid layout to align the containers */
+  grid-template-columns: 1fr 1fr 1fr; /* Divide the available width equally among the three columns */
+}
+
+.product-image {
+  height: 300px; /* Set the height of the images */
+  width: 100%; /* Make the images responsive */
+  object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+}
+
+.overview-image {
+  margin-top: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.325);
+  padding: 50px 0px;
+}
+
+/* (No styles for .overview-image-absolution provided, so leaving it empty) */
+
+.image-overview {
+  height: 300px;
+  width: 30%;
+  object-fit: cover; 
+}
+
+
+/* Optional: Add media queries for responsiveness on different screen sizes */
+@media screen and (max-width: 768px) {
+  .product-wrapper {
+    grid-template-columns: 1fr; /* Change to single column layout on smaller screens */
+  }
+}

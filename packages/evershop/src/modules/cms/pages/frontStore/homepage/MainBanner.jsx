@@ -21,10 +21,10 @@ export default function MainBanner() {
     <Slider {...settings}>
 
       <div className="slide">
-        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkHwIfa83tAQNOjJdd9LRhjc9LNakC8v3jZnnOWc1dil6XHmsEdaab8z7DYAhcTiT3DGw&usqp=CAU" alt="Banner Slide 1" />
+        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://kinhmatlily.com/images/best-seller.jpg" alt="Banner Slide 1" />
       </div>
       <div className="slide">
-        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://images.unsplash.com/photo-1517411020229-9cbb75afed2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0ZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Banner Slide 2" />
+        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg" alt="Banner Slide 2" />
       </div>
     </Slider>
 
