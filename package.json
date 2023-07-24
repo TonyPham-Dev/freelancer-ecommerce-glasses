@@ -50,6 +50,11 @@
     "webpack-bundle-analyzer": "^4.5.0"
   },
   "dependencies": {
-    "@evershop/evershop": "^1.0.0-rc.6"
+    "@coreui/react": "^4.9.1",
+    "@evershop/evershop": "^1.0.0-rc.6",
+    "node-sass": "^9.0.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   }
 }

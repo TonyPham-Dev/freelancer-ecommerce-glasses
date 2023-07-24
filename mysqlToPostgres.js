@@ -3,7 +3,7 @@ const { Pool } = require("pg");
 
 // MySQL database configuration
 const mysqlConfig = {
-  host: "10.4.21.144",
+  host: "10.4.21.145",
   user: "postgres",
   password: "123456",
   database: "postgres",
@@ -11,7 +11,7 @@ const mysqlConfig = {
 
 // PostgreSQL database configuration
 const pgConfig = {
-  host: "10.4.21.144",
+  host: "10.4.21.145",
   user: "postgres",
   password: "123456",
   database: "postgres",

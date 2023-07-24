@@ -1,5 +1,6 @@
 import React from 'react';
 import { _ } from '@evershop/evershop/src/lib/locale/translate';
+import Slider from 'react-slick';
 import './MainBanner.scss';
 
 export default function MainBanner() {
@@ -7,21 +8,26 @@ export default function MainBanner() {
     discount: '20%',
     price: '$2000'
   });
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
   return (
-    <div className="main-banner-home flex items-center">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-2">
-        <div />
-        <div className="text-center md:text-left px-2 ">
-          <h2 className="h1 ">{text}</h2>
-          <p>
-            Use coupon code
-            <span className="font-bold">DISCOUNT20</span>
-          </p>
-          <p>{_('Use coupon ${coupon}', { coupon: 'DISCOUNT20' })}</p>
-          <p></p>
-        </div>
+    <Slider {...settings}>
+
+      <div className="slide">
+        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkHwIfa83tAQNOjJdd9LRhjc9LNakC8v3jZnnOWc1dil6XHmsEdaab8z7DYAhcTiT3DGw&usqp=CAU" alt="Banner Slide 1" />
       </div>
-    </div>
+      <div className="slide">
+        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://images.unsplash.com/photo-1517411020229-9cbb75afed2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0ZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="Banner Slide 2" />
+      </div>
+    </Slider>
+
   );
 }
 
