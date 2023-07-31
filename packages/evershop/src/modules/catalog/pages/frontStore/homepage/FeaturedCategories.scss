@@ -13,6 +13,9 @@
 .product-container {
     background-color: #fff;
 }
+.product-container img {
+  margin: 0 auto;
+}
 .container-content > div {
   padding: 20px;
   margin: 10px;
@@ -58,6 +61,8 @@
   height: 300px;
   width: 30%;
   object-fit: cover; 
+  padding: 0px 10px;
+  border-radius: 15px;
 }
 
 

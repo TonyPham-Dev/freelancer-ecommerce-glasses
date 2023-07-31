@@ -16,8 +16,32 @@ export default function FeaturedCategories() {
     slidesToShow: 4,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024, // defines screen size below which the settings will change
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
+  
   return (
     <>
       <div className="mt-15">
@@ -25,7 +49,7 @@ export default function FeaturedCategories() {
           <div className="product-container">
             <div className="text-center">
               <img
-                styles={{ width: "100%" }}
+                styles={{ width: "100%", margin: '0 auto' }}
                 src="https://matviet.vn/wp-content/uploads/2023/06/63-300x300.png"
                 alt=""
               />
@@ -41,12 +65,12 @@ export default function FeaturedCategories() {
                 nhau, từ cá tính đến lịch lãm.
               </p>
             </div>
-            <Button url="/kinh-mat-thoi-trang" title="Kính mắt thời trang" variant="primary" />
+            <Button url="/kinh-mat-nam" title="Kính mắt thời trang" variant="primary" />
           </div>
           <div className="product-container">
             <div>
               <img
-                styles={{ width: "100%" }}
+                styles={{ width: "100%", margin: '0 auto' }}
                 src="https://matviet.vn/wp-content/uploads/2023/06/66-300x300.png"
                 alt=""
               />
@@ -62,12 +86,12 @@ export default function FeaturedCategories() {
                 khác nhau, từ cá tính đến thanh lịch.
               </p>
             </div>
-            <Button url="/kinh-mat-cao-cap" title="Kính mắt cao cấp" variant="primary" />
+            <Button url="/kinh-mat-nu" title="Kính mắt cao cấp" variant="primary" />
           </div>
           <div className="product-container">
             <div>
               <img
-                styles={{ width: "100%" }}
+                styles={{ width: "100%"}}
                 src="https://matviet.vn/wp-content/uploads/2023/05/1-1-300x300.png"
                 alt=""
               />
