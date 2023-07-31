@@ -5,3 +5,40 @@
     line-height: 2rem;
   }
 }
+
+.menu-container {
+  position: relative;
+  display: block;
+  z-index: 999999;
+}
+
+.product-header {
+  display: grid;
+  width: 400px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  gap: 10px; /* Adjust the gap between items based on your design */
+  padding: 20px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.32);
+  display: none;
+}
+
+.product-header.block {
+  display: grid; /* Use grid when it's in block mode */
+}
+
+.product-header.hidden {
+  display: none;
+}
+
+/* Optional: To limit the width of each product item */
+.product-item {
+  max-width: 250px; /* Adjust the width as needed */
+}
+@media (max-width: 768px) {
+  .isHidden {
+    display: none; /* Hide the product header on mobile */
+  }
+}
