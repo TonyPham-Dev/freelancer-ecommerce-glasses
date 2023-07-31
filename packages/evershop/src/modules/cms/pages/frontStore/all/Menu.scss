@@ -4,6 +4,9 @@
     font-weight: 300;
     line-height: 2rem;
   }
+  .nav-link::hover {
+    color: red;
+  }
 }
 
 .menu-container {

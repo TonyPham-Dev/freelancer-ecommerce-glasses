@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Menu.scss';
 import { createClient } from 'urql';
+import {AiOutlineDown} from 'react-icons/ai'
 
 export default function Menu({ menu: { items } }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -51,10 +52,13 @@ export default function Menu({ menu: { items } }) {
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <ul className="isHidden nav flex space-x-275 justify-content-center">
           {items.map((i, index) => (
-            <li className="nav-item" key={index}>
+            <li className="nav-item flex " key={index}>
               <a className="nav-link hover:underline" href={i.url}>
                 {i.name}
               </a>
+              <div>
+                <AiOutlineDown className='w-[12px] ml-[5px]'/>
+              </div>
             </li>
           ))}
         </ul>
