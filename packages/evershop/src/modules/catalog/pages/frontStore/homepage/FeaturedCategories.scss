@@ -47,12 +47,33 @@
   width: 100%; /* Make the images responsive */
   object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
 }
-
+.product-height {
+  font-weight: bold;
+}
+.product-height:hover {
+  color: red;
+  animation: 0.4s;
+}
+.product-border {
+  width: 45px;
+  height: 4px;
+  display: block;
+  background: #902428;
+  margin: 0 auto;
+}
 .overview-image {
   margin-top: 100px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.325);
   padding: 50px 0px;
+}
+.container-blog-text {
+  font-weight: bold;
+  text-align: center;
+}
+.container-blog-text:hover {
+  color: red;
+  animation: 0.4s;
 }
 
 /* (No styles for .overview-image-absolution provided, so leaving it empty) */

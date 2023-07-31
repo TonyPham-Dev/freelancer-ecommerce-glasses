@@ -21,22 +21,22 @@ export default function FeaturedCategories() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 2
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToScroll: 1
         }
       }
     ]
@@ -114,6 +114,78 @@ export default function FeaturedCategories() {
             />
           </div>
         </div>
+        <div className="text-center product-height">
+          <h2>Sản phẩm nổi bật</h2>
+        </div>
+        <div className="product-border" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width mb-[20px]">
+          <div className="product-container">
+            <div className="text-center">
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-04_GX_Catino_60301_c7-660.000-1_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">CATINO 60306 c2 1</h3>
+            <div className="mb-1">
+              <p>
+                Gọng kính CATINO 60306 c2 1 với thiết kế dáng mắt tròn trẻ
+                trung, hợp thời trang với mọi lứa tuổi, đem lại cảm giác mới mẻ
+                và năng động cho người ...
+              </p>
+            </div>
+            <Button
+              url="/gong-kinh"
+              title="Gọng kính"
+              variant="primary"
+            />
+          </div>
+          <div className="product-container">
+            <div>
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
+            <div className="mb-1">
+              <p>
+              Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00. Sản phẩm có các tính ...
+              </p>
+            </div>
+            <Button
+              url="/mat-kinh"
+              title="Mắt kính"
+              variant="primary"
+            />
+          </div>
+          <div className="product-container">
+            <div>
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-05_RB-3716-9008-5151IT-51-21-145-5950-1_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">
+              Rayban 3716 9008/51(51IT)
+            </h3>
+            <div className="mb-1">
+              <p>
+                Kính râm Rayban 3716 9008/51(51IT) với thiết kế dáng mắt
+                Browline trẻ trung, hợp thời trang với mọi lứa tuổi, cùng với
+                mắt kính chống tia UV tuyệt đối đem lại cảm ...
+              </p>
+            </div>
+            <Button
+              url="/kinh-ram"
+              title="Kính Râm"
+              variant="primary"
+            />
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width ">
           <div className="product-container">
             <div className="text-center">
@@ -183,7 +255,12 @@ export default function FeaturedCategories() {
           </div>
         </div>
       </div>
+      
       <div className="container-blog-show">
+      <div className="container-blog-text">
+        <h1>Đảm bảo chất lượng</h1>
+      </div>
+      <div className="product-border" />
         <div className="container-content grid grid-cols-1 md:grid-cols-3 gap-2 page-width">
           <div className="product-container flex flex-col items-center">
             <img
@@ -222,9 +299,9 @@ export default function FeaturedCategories() {
       </div>
       <div className="container">
         <div className="text-center">
-          <h1>Bài viết mới nhất</h1>
-          <p>Đây là một số lời phản hồi từ phía khách hàng</p>
+          <h1>Góc nhìn chuyên gia</h1>
         </div>
+        <div className="product-border" />
         <div className="product-wrapper container-content grid grid-cols-1 md:grid-cols-3 gap-2 page-width">
           <div className="product-container">
             <div>
@@ -365,5 +442,5 @@ export default function FeaturedCategories() {
 
 export const layout = {
   areaId: "content",
-  sortOrder: 10,
+  sortOrder: 10
 };
