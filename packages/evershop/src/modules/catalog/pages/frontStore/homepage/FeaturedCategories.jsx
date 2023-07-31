@@ -19,7 +19,7 @@ export default function FeaturedCategories() {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024, // defines screen size below which the settings will change
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
@@ -45,7 +45,7 @@ export default function FeaturedCategories() {
   return (
     <>
       <div className="mt-15">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width mb-[20px]">
           <div className="product-container">
             <div className="text-center">
               <img
