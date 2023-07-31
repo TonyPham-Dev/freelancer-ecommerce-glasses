@@ -33,3 +33,24 @@
     }
   }
 }
+
+.product-header-mobile {
+  display: grid;
+  width: 400px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  gap: 10px; /* Adjust the gap between items based on your design */
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  .product-item {
+    margin-top: 10px;
+
+  }
+}
+.product-header-mobile.block {
+  display: grid; /* Use grid when it's in block mode */
+}
+
+.product-header-mobile.hidden {
+  display: none;
+}
