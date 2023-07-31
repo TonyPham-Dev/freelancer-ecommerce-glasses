@@ -107,14 +107,89 @@ export default function FeaturedCategories() {
                 và chức năng của sản phẩm.
               </p>
             </div>
-            <Button url="/kinh-mat-nu-dep" title="Kính mắt nữ đẹp" variant="primary" />
+            <Button
+              url="/kinh-mat-nu-dep"
+              title="Kính mắt nữ đẹp"
+              variant="primary"
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width ">
+          <div className="product-container">
+            <div className="text-center">
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-04_GX_Catino_60301_c7-660.000-1_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">CATINO 60306 c2 1</h3>
+            <div className="mb-1">
+              <p>
+                Gọng kính CATINO 60306 c2 1 với thiết kế dáng mắt tròn trẻ
+                trung, hợp thời trang với mọi lứa tuổi, đem lại cảm giác mới mẻ
+                và năng động cho người ...
+              </p>
+            </div>
+            <Button
+              url="/gong-kinh"
+              title="Gọng kính"
+              variant="primary"
+            />
+          </div>
+          <div className="product-container">
+            <div>
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
+            <div className="mb-1">
+              <p>
+              Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00. Sản phẩm có các tính ...
+              </p>
+            </div>
+            <Button
+              url="/mat-kinh"
+              title="Mắt kính"
+              variant="primary"
+            />
+          </div>
+          <div className="product-container">
+            <div>
+              <img
+                styles={{ width: "100%" }}
+                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-05_RB-3716-9008-5151IT-51-21-145-5950-1_cr_480x640.jpg"
+                alt=""
+              />
+            </div>
+            <h3 className="h4 uppercase mt-1 mb-1">
+              Rayban 3716 9008/51(51IT)
+            </h3>
+            <div className="mb-1">
+              <p>
+                Kính râm Rayban 3716 9008/51(51IT) với thiết kế dáng mắt
+                Browline trẻ trung, hợp thời trang với mọi lứa tuổi, cùng với
+                mắt kính chống tia UV tuyệt đối đem lại cảm ...
+              </p>
+            </div>
+            <Button
+              url="/kinh-ram"
+              title="Kính Râm"
+              variant="primary"
+            />
           </div>
         </div>
       </div>
       <div className="container-blog-show">
         <div className="container-content grid grid-cols-1 md:grid-cols-3 gap-2 page-width">
           <div className="product-container flex flex-col items-center">
-            <img className="mx-auto" src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/sunglasses1.png" />
+            <img
+              className="mx-auto"
+              src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/sunglasses1.png"
+            />
             <h3>Mẫu mã đa dạng</h3>
             <p>
               Thấu hiểu thị hiếu khách hàng, mẫu mã của Eye Plus đa dạng, phù
@@ -122,7 +197,10 @@ export default function FeaturedCategories() {
             </p>
           </div>
           <div className="product-container flex flex-col items-center">
-            <img className="mx-auto" src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/medal1.png" />
+            <img
+              className="mx-auto"
+              src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/medal1.png"
+            />
             <h3>CHẤT LƯỢNG ĐI ĐẦU</h3>
             <p>
               Các sản phẩm được chọn lựa kỹ lưỡng, độ tinh xảo cao đi cùng
@@ -130,7 +208,10 @@ export default function FeaturedCategories() {
             </p>
           </div>
           <div className="product-container flex flex-col items-center">
-            <img className="mx-auto" src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/piggy-bank1.png" />
+            <img
+              className="mx-auto"
+              src="https://kinhmateyeplus.com/wp-content/uploads/2020/05/piggy-bank1.png"
+            />
             <h3>GIÁ CẢ HỢP LÝ</h3>
             <p>
               Mức giá cạnh tranh tương xứng với chất lượng, nhiều chương trình
@@ -210,7 +291,6 @@ export default function FeaturedCategories() {
         </div>
       </div>
       <div className="overview-image ">
-
         <Slider {...settings}>
           <img
             className="image-overview"
@@ -237,49 +317,47 @@ export default function FeaturedCategories() {
             src="https://sunwear.vn/cdn/shop/products/J75002-MBKL-AA_295x.jpg?v=1564166866"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/J45033-BLK_295x.jpg?v=1516161502"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/PS-9012-C19-B_295x.jpg?v=1565032999"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/EF27984-C82-6114_295x.jpg?v=1565031141"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/EF4026-C25_295x.jpg?v=1564512992"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/PLD3018S-DL5Y2-A_295x.jpg?v=1520277415"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/PA73401-B1_295x.JPG?v=1572975532"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/PLD1017S-3YGH8-A_295x.jpg?v=1520277582"
             alt=""
           />
-           <img
+          <img
             className="image-overview"
             src="https://sunwear.vn/cdn/shop/products/PLD2060S-807-LM_295x.jpg?v=1576134623"
             alt=""
           />
-
         </Slider>
-
       </div>
     </>
   );
@@ -287,5 +365,5 @@ export default function FeaturedCategories() {
 
 export const layout = {
   areaId: "content",
-  sortOrder: 10
+  sortOrder: 10,
 };
