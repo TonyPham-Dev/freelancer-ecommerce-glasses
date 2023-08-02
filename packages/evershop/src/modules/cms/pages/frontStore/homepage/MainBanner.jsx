@@ -17,18 +17,52 @@ export default function MainBanner() {
     autoplay: true,
     autoplaySpeed: 3000,
   };
-  return (
-    <Slider {...settings}>
+  // First, find the aspect ratio of Banner Slide 1 (e.g., 16:9)
+const aspectRatioBanner1 = 16 / 9;
 
-      <div className="slide">
-        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://kinhmatlily.com/images/best-seller.jpg" alt="Banner Slide 1" />
+return (
+  <Slider {...settings}>
+    <div className="slide">
+      <div className="image-container">
+        <img
+          style={{ objectFit: 'cover', width: '100%' }}
+          className="image"
+          srcSet="
+            https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg 1920w,
+            https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg-medium.jpg 960w,
+            https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg-small.jpg 480w
+          "
+          sizes="
+            (max-width: 768px) 100vw,
+            80vw
+          "
+          src="https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg"
+          alt="Banner Slide 1"
+        />
       </div>
-      <div className="slide">
-        <img style={{width: '100%', height: '80vh', objectFit: 'cover'}} src="https://matkinhhanghieu.com/wp-content/uploads/2023/01/offer-banner2.jpg" alt="Banner Slide 2" />
+    </div>
+    <div className="slide">
+      <div className="image-container">
+        <img
+          style={{ objectFit: 'cover', width: '100%' }}
+          className="image"
+          srcSet="
+            https://kinhmatlily.com/images/banner-supper-combo.jpg 1920w,
+            https://kinhmatlily.com/images/banner-supper-combo.jpg-medium.jpg 960w,
+            https://kinhmatlily.com/images/banner-supper-combo.jpg-small.jpg 480w
+          "
+          sizes="
+            (max-width: 768px) 100vw,
+            80vw
+          "
+          src="https://kinhmatlily.com/images/banner-supper-combo.jpg"
+          alt="Banner Slide 2"
+        />
       </div>
-    </Slider>
+    </div>
+  </Slider>
+);
 
-  );
 }
 
 export const layout = {

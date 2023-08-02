@@ -52,6 +52,7 @@
   "dependencies": {
     "@coreui/react": "^4.9.1",
     "@evershop/evershop": "^1.0.0-rc.6",
+    "aos": "^2.3.4",
     "node-sass": "^9.0.0",
     "react-icons": "^4.10.1",
     "react-responsive-carousel": "^3.2.23",
