@@ -28,7 +28,7 @@ export function App({ children }) {
           </div>
         </a>
       </div>
-      <div className="cart fixed right-[10px] top-[44%]">
+      <div className="cart fixed right-[10px] top-[44%] mb-[30px]">
         <a href="/cart" target="_blank">
           <div className="phone">
             <BsFillCartFill className="custom-icon"></BsFillCartFill>

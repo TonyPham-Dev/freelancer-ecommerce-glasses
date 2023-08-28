@@ -16,10 +16,6 @@
 }
 
 .product-header {
-  display: grid;
-  width: 400px;
-  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
-  gap: 10px; /* Adjust the gap between items based on your design */
   padding: 20px;
   position: absolute;
   background-color: #fff;
@@ -27,12 +23,31 @@
   box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.32);
   display: none;
 }
+.product-header-last {
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.32);
+  display: none;
+}
+.items {
+  padding: 0px 20px;
+}
 
 .product-header.block {
-  display: grid; /* Use grid when it's in block mode */
+  display: flex; /* Use grid when it's in block mode */
 }
 
 .product-header.hidden {
+  display: none;
+}
+.product-header-last.block {
+  display: flex; /* Use grid when it's in block mode */
+}
+
+.product-header-last.hidden {
   display: none;
 }
 

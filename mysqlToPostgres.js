@@ -11,7 +11,7 @@ const mysqlConfig = {
 
 // PostgreSQL database configuration
 const pgConfig = {
-  host: "192.168.0.106",
+  host: "192.168.0.103",
   user: "postgres",
   password: "123456",
   database: "postgres",
