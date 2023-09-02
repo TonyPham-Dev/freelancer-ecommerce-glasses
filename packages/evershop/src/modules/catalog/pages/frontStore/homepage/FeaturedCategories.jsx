@@ -1,14 +1,17 @@
-/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
-import Button from '@components/frontStore/cms/Button';
-import './FeaturedCategories.scss';
-import Slider from 'react-slick';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Button from "@components/frontStore/cms/Button";
+import "./FeaturedCategories.scss";
+import Slider from "react-slick";
 
-export default function FeaturedCategories() {
+export default function FeaturedCategories({ products: { items: products } }) {
+  console.log("productsasdasasd", products);
+  const firstSixProducts = products.slice(0, 6);
   const settings = {
     dots: true,
     infinite: true,
@@ -41,7 +44,14 @@ export default function FeaturedCategories() {
       }
     ]
   };
-
+  function truncateText(text, maxLines) {
+    const lines = text.split('<br>');
+    if (lines.length <= maxLines) {
+      return lines.join('<br>');
+    } else {
+      return `${lines.slice(0, maxLines).join('<br>')  }...`;
+    }
+  }
   return (
     <>
       <div className="mt-15">
@@ -49,7 +59,7 @@ export default function FeaturedCategories() {
           <div className="product-container-one fade-down">
             <div className="text-center">
               <img
-                styles={{ width: '100%', margin: '0 auto' }}
+                styles={{ width: "100%", margin: "0 auto" }}
                 src="https://matviet.vn/wp-content/uploads/2023/06/63-300x300.png"
                 alt=""
               />
@@ -74,7 +84,7 @@ export default function FeaturedCategories() {
           <div className="product-container-one fade-down">
             <div>
               <img
-                styles={{ width: '100%', margin: '0 auto' }}
+                styles={{ width: "100%", margin: "0 auto" }}
                 src="https://matviet.vn/wp-content/uploads/2023/06/66-300x300.png"
                 alt=""
               />
@@ -99,7 +109,7 @@ export default function FeaturedCategories() {
           <div className="product-container-one fade-down">
             <div>
               <img
-                styles={{ width: '100%' }}
+                styles={{ width: "100%" }}
                 src="https://matviet.vn/wp-content/uploads/2023/05/1-1-300x300.png"
                 alt=""
               />
@@ -127,158 +137,32 @@ export default function FeaturedCategories() {
         </div>
         <div className="product-border" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width mb-[20px]">
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
+          {firstSixProducts &&
+            firstSixProducts.map((product) => (
+              
+              <div className="product-container-done">
+                <div>
+                  <div className="fade-down-done">
+                    <a href="/cart">
+                      <div className="add-cart">
+                        <h6>Thêm vào giỏ hàng</h6>
+                      </div>
+                    </a>
                   </div>
-                </a>
+                  <img
+                    styles={{ width: "100%" }}
+                    src={`http://localhost:3000${product.image.thumb}`}
+                    alt=""
+                  />
+                </div>
+                <h3 className="h4 uppercase mt-1 mb-1">{product.name}</h3>
+                <div
+                  className="mb-1"
+                  dangerouslySetInnerHTML={{ __html: truncateText(product.description, 5) }}
+                />
+                <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
               </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
-                  </div>
-                </a>
-              </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
-                  </div>
-                </a>
-              </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 page-width ">
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
-                  </div>
-                </a>
-              </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
-                  </div>
-                </a>
-              </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
-          <div className="product-container-done">
-            <div>
-              <div className="fade-down-done">
-                <a href="/cart">
-                  <div className="add-cart">
-                    <h6>Thêm vào giỏ hàng</h6>
-                  </div>
-                </a>
-              </div>
-              <img
-                styles={{ width: '100%' }}
-                src="https://kinhmatbichngoc.vn/temp/-uploaded-2021-06_DSC08160_cr_480x640.jpg"
-                alt=""
-              />
-            </div>
-            <h3 className="h4 uppercase mt-1 mb-1">Mắt kính DuraVision</h3>
-            <div className="mb-1">
-              <p>
-                Mắt kính Zeiss DuraVision Blue Protect 1.67 phù hợp nhất với
-                người có độ cận từ 0.00 đến 7.00 hoặc độ viễn từ 0.00 đến 5.00.
-                Sản phẩm có các tính ...
-              </p>
-            </div>
-            <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
-          </div>
+            ))}
         </div>
       </div>
 
@@ -466,7 +350,81 @@ export default function FeaturedCategories() {
   );
 }
 
+FeaturedCategories.propTypes = {
+  products: PropTypes.shape({
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        productId: PropTypes.number,
+        uuid: PropTypes.string,
+        name: PropTypes.string,
+        image: PropTypes.shape({
+          thumb: PropTypes.string
+        }),
+        sku: PropTypes.string,
+        status: PropTypes.number,
+        inventory: PropTypes.shape({
+          qty: PropTypes.number
+        }),
+        description: PropTypes.string.isRequired,
+        price: PropTypes.shape({
+          regular: PropTypes.shape({
+            value: PropTypes.number,
+            text: PropTypes.string
+          })
+        }),
+        editUrl: PropTypes.string,
+        updateApi: PropTypes.string,
+        deleteApi: PropTypes.string
+      })
+    ),
+    total: PropTypes.number,
+    currentFilters: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string,
+        operation: PropTypes.string,
+        value: PropTypes.string
+      })
+    )
+  }).isRequired
+};
+
 export const layout = {
-  areaId: 'content',
+  areaId: "content",
   sortOrder: 10
 };
+
+export const query = `
+  query Query {
+    products {
+      items {
+        productId
+        uuid
+        name
+        image {
+          thumb
+        }
+        sku
+        status
+        inventory {
+          qty
+        }
+        price {
+          regular {
+            value
+            text
+          }
+        }
+        description
+        editUrl
+        updateApi
+        deleteApi
+      }
+      total
+      currentFilters {
+        key
+        operation
+        value
+      }
+    }
+  }
+`;
