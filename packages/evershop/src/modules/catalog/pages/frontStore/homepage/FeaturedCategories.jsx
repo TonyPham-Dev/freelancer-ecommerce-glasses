@@ -151,7 +151,7 @@ export default function FeaturedCategories({ products: { items: products } }) {
                   </div> */}
                   <img
                     styles={{ width: "100%" }}
-                    src={`http://localhost:3000${product.image.thumb}`}
+                    src={`https://kinhmatthanhxoai.vn${product.image.thumb}`}
                     alt=""
                   />
                 </div>
