@@ -142,13 +142,13 @@ export default function FeaturedCategories({ products: { items: products } }) {
               
               <div className="product-container-done">
                 <div>
-                  <div className="fade-down-done">
+                  {/* <div className="fade-down-done">
                     <a href="/cart">
                       <div className="add-cart">
                         <h6>Thêm vào giỏ hàng</h6>
                       </div>
                     </a>
-                  </div>
+                  </div> */}
                   <img
                     styles={{ width: "100%" }}
                     src={`http://localhost:3000${product.image.thumb}`}

@@ -12,35 +12,10 @@ import "./MobileMenu.scss";
 import { AiOutlineDown } from "react-icons/ai";
 
 export default function MobileMenu({ menu: { items } }) {
+  console.log(items)
   const [show, setShow] = React.useState(false);
   const [expandedProductIndex, setExpandedProductIndex] = React.useState(-1);
-  const dataProduct = [
-    {
-      index: 1,
-      name: "CATINO 60306 c2 1",
-      url: "catino-60306"
-    },
-    {
-      index: 2,
-      name: "CATINO 60306 c3",
-      url: "catino-60306-c3"
-    },
-    {
-      index: 3,
-      name: "CATINO 60306 c2",
-      url: "catino-60306-c2"
-    },
-    {
-      index: 4,
-      name: "CATINO 60301 c7",
-      url: "catino-60301-c7"
-    },
-    {
-      index: 5,
-      name: "CATINO 60161 c1",
-      url: "catino-60161-c1"
-    }
-  ];
+
   const handleItemClick = (index) => {
     if (expandedProductIndex === index) {
       setExpandedProductIndex(-1);
@@ -78,8 +53,7 @@ export default function MobileMenu({ menu: { items } }) {
                 <a
                   className="nav-link hover:underline"
                   href={item.url}
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     handleItemClick(index);
                   }}
                 >
@@ -93,7 +67,7 @@ export default function MobileMenu({ menu: { items } }) {
                     }}
                   />
               </div>
-              <div>
+              {/* <div>
                 {expandedProductIndex === index && (
                   <ul className="product-header-mobile block">
                     {dataProduct.map((product, productIndex) => (
@@ -105,7 +79,7 @@ export default function MobileMenu({ menu: { items } }) {
                     ))}
                   </ul>
                 )}
-              </div>
+              </div> */}
             </li>
           ))}
         </ul>
