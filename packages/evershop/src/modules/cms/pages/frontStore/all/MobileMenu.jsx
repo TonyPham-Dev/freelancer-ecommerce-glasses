@@ -1,20 +1,11 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable no-undef */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/no-array-index-key */
-import PropTypes from "prop-types";
-import React from "react";
-import "./MobileMenu.scss";
-
-import { AiOutlineDown } from "react-icons/ai";
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import './MobileMenu.scss';
+import { AiOutlineDown } from 'react-icons/ai';
 
 export default function MobileMenu({ menu: { items } }) {
-  console.log(items)
-  const [show, setShow] = React.useState(false);
-  const [expandedProductIndex, setExpandedProductIndex] = React.useState(-1);
+  const [show, setShow] = useState(false);
+  const [expandedProductIndex, setExpandedProductIndex] = useState(-1);
 
   const handleItemClick = (index) => {
     if (expandedProductIndex === index) {
@@ -24,6 +15,8 @@ export default function MobileMenu({ menu: { items } }) {
     }
   };
 
+  // Define your data arrays here
+  const dataArrays = [dataProduct, dataProduct2, dataProduct3,[] , [], [], dataProduct4];
 
   return (
     <div className="main-menu-mobile self-center">
@@ -42,7 +35,12 @@ export default function MobileMenu({ menu: { items } }) {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
         </svg>
       </a>
       {show && (
@@ -59,27 +57,34 @@ export default function MobileMenu({ menu: { items } }) {
                 >
                   {item.name}
                 </a>
-                  <AiOutlineDown
-                    className={`justify-end w-[12px] ml-[5px] ${expandedProductIndex === index ? "transform rotate-180" : ""}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleItemClick(index);
-                    }}
-                  />
+                <AiOutlineDown
+                  className={`justify-end w-[12px] ml-[5px] ${
+                    expandedProductIndex === index ? 'transform rotate-180' : ''
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleItemClick(index);
+                  }}
+                />
               </div>
-              {/* <div>
+              <div>
                 {expandedProductIndex === index && (
                   <ul className="product-header-mobile block">
-                    {dataProduct.map((product, productIndex) => (
-                      <li className="product-item" key={productIndex}>
-                        <a className="nav-link hover:underline" href={product.url}>
-                          {product.name}
-                        </a>
-                      </li>
-                    ))}
+                    {dataArrays[index].length > 0 ? dataArrays[index].map((product, productIndex) => (
+                       <div className="items">
+                       <h4>{product.title}</h4>
+                       {
+                         product.items.map((item, itemIndex) => <div key={itemIndex}>
+                             <a  className="nav-link hover:underline" href={item.url}>
+                           {item.name}
+                         </a>
+                           </div>)
+                       }
+                     </div>
+                    )) : null}
                   </ul>
                 )}
-              </div> */}
+              </div>
             </li>
           ))}
         </ul>
@@ -87,7 +92,6 @@ export default function MobileMenu({ menu: { items } }) {
     </div>
   );
 }
-
 
 MobileMenu.propTypes = {
   menu: PropTypes.shape({
@@ -101,7 +105,7 @@ MobileMenu.propTypes = {
 };
 
 export const layout = {
-  areaId: "icon-wrapper",
+  areaId: 'icon-wrapper',
   sortOrder: 50
 };
 
@@ -113,4 +117,246 @@ export const query = `
         url
       }
     }
-}`;
+  }
+`;
+const dataProduct = [
+  {
+    title: '',
+    items: [
+      {
+        name: 'Kính Rayban chính hãng',
+        url: 'kinh-rayban'
+      }
+    ]
+  },
+  {
+    title: '',
+    items: [
+      {
+        name: 'Kính Levis chính hãng',
+        url: 'kinh-levis'
+      }
+    ]
+  },
+  {
+    title: '',
+    items: [
+      {
+        name: 'Kính Eyes chính hãng',
+        url: 'kinh-eyes'
+      }
+    ]
+  }
+];
+
+const dataProduct2 = [
+  {
+    title: 'Chất liệu',
+    items: [
+      {
+        name: 'Titan',
+        url: 'titan'
+      },
+      {
+        name: 'Nhựa',
+        url: 'nhua'
+      },
+      {
+        name: 'Kim loại',
+        url: 'kim-loai'
+      }
+    ]
+  },
+
+  {
+    title: 'Kiểu Gọng',
+    items: [
+      {
+        name: 'Vành liền',
+        url: 'vanh-lien'
+      },
+      {
+        name: 'Nửa gọng',
+        url: 'nua-gong'
+      },
+      {
+        name: 'Không gọng',
+        url: 'khong-gong'
+      }
+    ]
+  },
+
+  {
+    title: 'Dáng mắt',
+    items: [
+      {
+        name: 'Mắt Mèo',
+        url: 'mat-meo'
+      },
+      {
+        name: 'Tròn',
+        url: 'tron'
+      },
+      {
+        name: 'Vuông',
+        url: 'vuong'
+      }
+    ]
+  },
+
+  {
+    title: 'Giới tính',
+    items: [
+      {
+        name: 'Nam',
+        url: 'nam'
+      },
+      {
+        name: 'Nữ',
+        url: 'nu'
+      }
+    ]
+  }
+  // Add more product data as needed
+];
+const dataProduct3 = [
+  {
+    title: 'Tính năng',
+    items: [
+      {
+        name: 'Hạn chế loang nước',
+        url: 'han-che-loang-nuoc'
+      },
+      {
+        name: 'Chống phản quang',
+        url: 'chong-phan-quang'
+      },
+      {
+        name: 'Chống va đập',
+        url: 'chong-va-dap'
+      },
+      {
+        name: 'Chống loá sáng',
+        url: 'chong-loa-sang'
+      },
+      {
+        name: 'Eyezen',
+        url: 'eyezen'
+      },
+      {
+        name: 'Chống ánh sáng xanh',
+        url: 'chong-anh-sang-xanh'
+      },
+      {
+        name: 'Râm cận',
+        url: 'ram-can'
+      },
+      {
+        name: 'Đổi màu',
+        url: 'doi-mau'
+      }
+    ]
+  },
+
+  {
+    title: 'Thương Hiệu',
+    items: [
+      {
+        name: 'Chemi',
+        url: 'chemi'
+      },
+      {
+        name: 'Essilor',
+        url: 'essilor'
+      },
+      {
+        name: 'Kodak',
+        url: 'kodak'
+      },
+      {
+        name: 'Zeiss',
+        url: 'zeiss'
+      }
+    ]
+  },
+
+  {
+    title: 'Chiết Suất',
+    items: [
+      {
+        name: '1.60',
+        url: 'mat-kinh/?chiet-suat=50'
+      },
+      {
+        name: '1.56',
+        url: 'mat-kinh/?chiet-suat=53'
+      },
+      {
+        name: '1.74',
+        url: '174'
+      },
+      {
+        name: '1.67',
+        url: '167'
+      }
+    ]
+  },
+
+  {
+    title: 'Độ cận',
+    items: [
+      {
+        name: '0.00 - 2.50',
+        url: '0.00-2.50'
+      },
+      {
+        name: '3.75 - 7.00',
+        url: '3.75-7.00'
+      },
+      {
+        name: '2.75 - 3.50',
+        url: '2.75-3.50'
+      },
+      {
+        name: 'Trên 7.00',
+        url: 'tren-7.00'
+      }
+    ]
+  },
+  {
+    title: 'Độ viễn',
+    items: [
+      {
+        name: '2.25 - 3.00',
+        url: '2.25-3.00'
+      },
+      {
+        name: '0.00 - 2.00',
+        url: '0.00-2.00'
+      },
+      {
+        name: '3.25 - 5.00',
+        url: '3.25-5.00'
+      },
+      {
+        name: 'Trên 5.00',
+        url: 'tren-5.00'
+      }
+    ]
+  }
+  // Add more product data as needed
+];
+const dataProduct4 = [
+  {
+    title: '',
+    items: [{ name: 'Gọng kính', url: 'gong-kinh' }]
+  },
+  {
+    title: '',
+    items: [{ name: 'Mắt kính', url: 'mat-kinh' }]
+  },
+  {
+    title: '',
+    items: [{ name: 'Tật', url: 'tat' }]
+  }
+];
