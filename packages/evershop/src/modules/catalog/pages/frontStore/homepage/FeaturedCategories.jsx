@@ -141,25 +141,19 @@ export default function FeaturedCategories({ products: { items: products } }) {
             firstSixProducts.map((product) => (
               
               <div className="product-container-done">
-                <div>
-                  {/* <div className="fade-down-done">
-                    <a href="/cart">
-                      <div className="add-cart">
-                        <h6>Thêm vào giỏ hàng</h6>
-                      </div>
-                    </a>
-                  </div> */}
+                <div style={{ width: '100%', height: '500px'}}>
                   <img
-                    styles={{ width: "100%" }}
-                    src={`https://kinhmatthanhxoai.vn${product.image.thumb}`}
+                    style={{ width: "100%", height: "100%", objectFit: 'cover', borderRadius: '10px'}}
+                    // src={`https://www.kinhmatthanhxoai.vn${product.image.thumb}`}
+                    src={`http://localhost:3000${product.image.thumb}`}
                     alt=""
                   />
                 </div>
-                <h3 className="h4 uppercase mt-1 mb-1">{product.name}</h3>
+                {/* <h3 className="h4 uppercase mt-1 mb-1">{product.name}</h3>
                 <div
                   className="mb-1"
                   dangerouslySetInnerHTML={{ __html: truncateText(product.description, 5) }}
-                />
+                /> */}
                 <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
               </div>
             ))}
