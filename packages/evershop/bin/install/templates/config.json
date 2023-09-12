@@ -1,6 +1,6 @@
 {
   "shop" : {
-    "currency": "USD",
+    "currency": "VND",
     "language": "vi",
     "weightUnit": "kg",
     "timezone": "UTC"
