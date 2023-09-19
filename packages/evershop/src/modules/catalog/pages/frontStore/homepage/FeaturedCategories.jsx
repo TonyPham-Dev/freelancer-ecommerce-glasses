@@ -12,6 +12,7 @@ import Slider from "react-slick";
 export default function FeaturedCategories({ products: { items: products } }) {
   console.log("productsasdasasd", products);
   const firstSixProducts = products.slice(0, 6);
+  console.log('products', products);
   const settings = {
     dots: true,
     infinite: true,
@@ -141,19 +142,24 @@ export default function FeaturedCategories({ products: { items: products } }) {
             firstSixProducts.map((product) => (
               
               <div className="product-container-done">
-                <div style={{ width: '100%', height: '500px'}}>
+                <div style={{ width: '100%', height: '300px'}}>
+                  <a href={product.url}>
                   <img
                     style={{ width: "100%", height: "100%", objectFit: 'cover', borderRadius: '10px'}}
-                    src={`https://www.kinhmatthanhxoai.vn${product.image.thumb}`}
+                    // src={`https://www.kinhmatthanhxoai.vn${product.image.thumb}`}
+                    src={`http://localhost:3000${product.image.thumb}`}
                     alt=""
                   />
+                  </a>
                 </div>
                 {/* <h3 className="h4 uppercase mt-1 mb-1">{product.name}</h3>
                 <div
                   className="mb-1"
                   dangerouslySetInnerHTML={{ __html: truncateText(product.description, 5) }}
                 /> */}
-                <Button url="/mat-kinh" title="Mắt kính" variant="primary" />
+                <div className="mt-2">
+                <Button url={product.url} title="Xem thêm >>>" variant="primary" />
+                </div>
               </div>
             ))}
         </div>
@@ -349,6 +355,7 @@ FeaturedCategories.propTypes = {
       PropTypes.shape({
         productId: PropTypes.number,
         uuid: PropTypes.string,
+        url: PropTypes.string.isRequired,
         name: PropTypes.string,
         image: PropTypes.shape({
           thumb: PropTypes.string
@@ -392,6 +399,7 @@ export const query = `
       items {
         productId
         uuid
+        url
         name
         image {
           thumb
